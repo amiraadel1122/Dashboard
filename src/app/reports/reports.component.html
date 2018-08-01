@@ -1,0 +1,19 @@
+<kendo-toolbar style="width: 900px;">
+    <kendo-toolbar-button [text]="'Button'"></kendo-toolbar-button>
+    <kendo-toolbar-button [text]="'Toggle'" [togglable]="true"></kendo-toolbar-button>
+    <kendo-toolbar-splitbutton [text]="'Split Button'" [data]="splitButtonData">
+    </kendo-toolbar-splitbutton>
+    <kendo-toolbar-dropdownbutton [text]="'DropDownButton'" [data]="dropdownButtonData">
+    </kendo-toolbar-dropdownbutton>
+    <kendo-toolbar-buttongroup [selection]="'single'">
+        <kendo-toolbar-button [togglable]="true" [icon]="'align-left'"></kendo-toolbar-button>
+        <kendo-toolbar-button [togglable]="true" [icon]="'align-center'"></kendo-toolbar-button>
+        <kendo-toolbar-button [togglable]="true" [icon]="'align-right'"></kendo-toolbar-button>
+        <kendo-toolbar-button [togglable]="true" [icon]="'align-justify'"></kendo-toolbar-button>
+    </kendo-toolbar-buttongroup>
+</kendo-toolbar>
+
+<textarea kendoTextArea [autoSize]="true" rows="20" style="width: 900px">
+
+  
+</textarea>

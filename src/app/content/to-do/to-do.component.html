@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+
+        <div class="example-wrapper col-xs-12 col-md-6 ">
+            <button kendoButton *ngIf="!opened" (click)="open()">ToDo</button>
+            <p *ngIf="dataSaved">Data has been saved</p>
+            <div class="col-xs-12 col-md-6 toDo">
+                <kendo-window [(top)]="windowTop" [(left)]="windowLeft" title="To do list" *ngIf="opened" (close)="close()" [minWidth]="100" [width]="400" [height]="220">
+                    <h3>To Do List Will Be Here One day!</h3>
+
+
+                </kendo-window>
+            </div>
+        </div>
+
+    </div>
+</div>

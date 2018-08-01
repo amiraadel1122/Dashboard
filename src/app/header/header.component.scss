@@ -1,0 +1,36 @@
+@import "../../variables.scss";
+nav {
+    -webkit-box-shadow: 0 -8px 37px #949494;
+    -moz-box-shadow: 0 -8px 37px #949494;
+    box-shadow: 0 -8px 37px #949494;
+    // top: 0;
+    // position: sticky;
+    background-image: url(/assets/images/Pattern2.jpg);
+    z-index: 9999;
+    .dateStyle {
+        color: #ff6358;
+    }
+    .user-profile {
+        cursor: pointer;
+        img {
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
+
+.navbar-nav .open .dropdown-menu {
+    position: absolute;
+    background: #fff;
+    margin-top: 0;
+    border: 1px solid #D9DEE4;
+    width: 220px;
+}
+
+.user {
+    display: inline-block;
+}
+
+li {
+    list-style: none;
+}

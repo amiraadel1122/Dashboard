@@ -1,0 +1,16 @@
+<div class="example-wrapper col-xs-12 col-md-6">
+    <button kendoButton *ngIf="!opened" (click)="open()">tasks</button>
+    <p *ngIf="dataSaved">Data has been saved</p>
+    <kendo-window [(top)]="windowTop" [(left)]="windowLeft" title="Tasks" *ngIf="opened" (close)="close()" [minWidth]="100" [width]="400" [height]="220">
+        <!--circular chart-->
+        <kendo-chart>
+            <kendo-chart-series>
+                <kendo-chart-series-item type="donut" [data]="data" categoryField="kind" field="share">
+                    <kendo-chart-series-item-labels [content]="labelContent" color="#fff" background="none">
+                    </kendo-chart-series-item-labels>
+                </kendo-chart-series-item>
+            </kendo-chart-series>
+            <kendo-chart-legend [visible]="false"></kendo-chart-legend>
+        </kendo-chart>
+    </kendo-window>
+</div>

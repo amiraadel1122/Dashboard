@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="assets/images/logo.png" alt="logo" style="width: 160px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+
+
+
+            <li class="nav-item dateStyle ml-5">
+                {{date}}
+
+            </li>
+        </ul>
+
+        <li class="my-2 my-lg-0">
+            <a class="user-profile " aria-expanded="false">
+                <!-- <i class="fa fa-sort-down pr-1"></i>
+               -->
+                <kendo-menu [items]="items" class="user">
+                </kendo-menu>
+                <img src="assets/images/Asset 2-8.png" alt="">
+
+            </a>
+
+        </li>
+    </div>
+</nav>

@@ -1,0 +1,26 @@
+.addBtn {
+    position: relative;
+    top: 20px;
+}
+
+.searchBtn {
+    position: relative;
+    bottom: 20px;
+}
+
+.example-wrapper,
+.example-col {
+    position: relative;
+    top: 10px;
+}
+
+.error {
+    color: rgb(22, 2, 2);
+}
+
+// .k-required {
+//     &::after {
+//         content: "Required";
+//         color: red;
+//     }
+// }

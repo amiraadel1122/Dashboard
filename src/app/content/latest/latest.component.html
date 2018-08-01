@@ -1,0 +1,19 @@
+<div class="example-wrapper  col-xs-12 col-md-6 pos">
+    <button kendoButton *ngIf="!opened" (click)="open()">Latest</button>
+    <p *ngIf="dataSaved">Data has been saved</p>
+    <div class="col-xs-12 col-md-6">
+        <kendo-window [(top)]="windowTop" [(left)]="windowLeft" title="Latest News" *ngIf="opened" (close)="close()" [minWidth]="100" [width]="400" [height]="220">
+            <section class="latest">
+                <h3>This is title of the news</h3>
+                <p>
+                    Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus et aut officiis debitis aut rerum.
+
+                </p>
+                <small>by Carine Fox , 19/08/2018</small>
+            </section>
+
+
+        </kendo-window>
+    </div>
+
+</div>

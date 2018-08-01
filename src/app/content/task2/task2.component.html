@@ -1,0 +1,16 @@
+<div class="example-wrapper  col-xs-12 col-md-6">
+    <button kendoButton *ngIf="!opened" (click)="open()">tasks2</button>
+    <p *ngIf="dataSaved">Data has been saved</p>
+    <div class=" col-xs-12 col-md-6">
+        <kendo-window [(top)]="windowTop" [(left)]="windowLeft" title="Tasks 2" *ngIf="opened" (close)="close()" [minWidth]="100" [width]="400" [height]="220">
+            <!--Legen chart-->
+            <kendo-chart (legendItemClick)="onLegendItemClick($event)">
+                <kendo-chart-series>
+                    <kendo-chart-series-item name="Fibonacci" [data]="seriesData" [visible]="seriesVisible">
+                    </kendo-chart-series-item>
+                </kendo-chart-series>
+            </kendo-chart>
+        </kendo-window>
+    </div>
+
+</div>

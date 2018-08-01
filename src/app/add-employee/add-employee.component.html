@@ -1,0 +1,134 @@
+<div class="container">
+
+    <kendo-tabstrip class="mt-5 ">
+        <kendo-tabstrip-tab [title]="'Add Employee'" [selected]="true">
+            <ng-template kendoTabContent>
+                <div class="alert alert-success" role="alert" [ngStyle]="{'display':AlertShown === true ? 'block' : 'none' }">
+                    Employee added successfully
+                </div>
+                <div class="card">
+                    <div class="card-block">
+                        <form class="k-form " [formGroup]="FormG" (ngSubmit)="submitFun(FormG.value)">
+                            <div class="row">
+
+                                <div class="col-lg-3">
+                                    <label class="k-form-field">
+                                      <span> 
+                                        Employee Name <span class="k-required" >*</span>
+                                        <span class="error" *ngIf="FormG.get('Name').touched && FormG.get('Name').hasError('required')">Required</span>
+                                      </span>
+                                      <input formControlName="Name" class="k-textbox" placeholder="Employee Name" />
+                                      </label>
+                                </div>
+
+                                <div class="col-lg-3">
+
+                                    <label class="k-form-field">
+                <span>
+                Employee Code <span class=" k-required">*</span> <span class="error"  *ngIf="FormG.get('Code').touched && FormG.get('Code').hasError('required')">Required</span>
+                </span>
+                <kendo-numerictextbox formControlName="Code"
+                [decimals]=0 [spinners]=false [format]="format" [min]="min" [autoCorrect]="autoCorrect">
+            </kendo-numerictextbox>
+            </label>
+                                </div>
+
+                            </div>
+
+                            <div class="row mt-5">
+
+                                <div class="col-lg-3">
+                                    <div class="example-wrapper">
+
+                                        <span>
+                                    Department <span class="k-required"  >*</span><span class="error" *ngIf="FormG.get('Department').touched && FormG.get('Department').hasError('required')">Required</span>
+                                        </span>
+                                        <kendo-combobox formControlName="Department" [data]="listItems" [allowCustom]="allowCustom" placeholder="Employee Department">
+                                        </kendo-combobox>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-xs-12 col-md-3 example-col">
+                                    <span>
+                                Birthday <span class=" k-required">*</span><span class="error" *ngIf="FormG.get('DateOfBirth').touched && FormG.get('DateOfBirth').hasError('required')">Required</span>
+                                    </span>
+                                    <kendo-datepicker formControlName="DateOfBirth" id="startDate" (valueChange)="calc()" [(value)]="dateValue"></kendo-datepicker>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 mt-5">
+                                    <div class="k-form-field">
+                                        <span>Gender</span>
+
+                                        <input type="radio" formControlName="Gender" name="Gender" id="female" value="female" class="k-radio">
+                                        <label class="k-radio-label" for="female">Female</label>
+
+                                        <input type="radio" formControlName="Gender" name="Gender" id="male" value="male" class="k-radio">
+                                        <label class="k-radio-label" for="male">Male</label>
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-4 mt-5">
+                                    <button [disabled]="!FormG.valid" kendoButton [iconClass]="'fa fa-plus fa-fw'" [primary]="true" (click)="ShowAlert()" class="addBtn p-2" type="submit">ADD</button>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </ng-template>
+        </kendo-tabstrip-tab>
+
+        <!--Search Employee tab-->
+        <kendo-tabstrip-tab [title]="'Search Employee'">
+            <ng-template kendoTabContent>
+
+                <form class="k-form " [formGroup]="FormSearch" (ngSubmit)="searchFunc(FormSearch.value)">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <label class="k-form-field">
+            <span>
+              Employee Name <span class="k-required" >*</span>
+              <span class="error" *ngIf="FormSearch.get('searchName').touched && FormSearch.get('searchName').hasError('required')">Required</span>
+            </span>
+            <input class="k-textbox" formControlName="searchName" placeholder="Employee Name" />
+        </label>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <div class="example-wrapper">
+
+                                <span>
+                                        Department <span class="k-required"  >*</span>
+                                <span class="error" *ngIf="FormSearch.get('searchDepartment').touched && FormSearch.get('searchDepartment').hasError('required')">Required</span>
+                                </span>
+                                <kendo-combobox [data]="listItems" formControlName="searchDepartment" [allowCustom]="allowCustom" placeholder="Employee Department">
+                                </kendo-combobox>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mt-5">
+                            <button kendoButton [iconClass]="'fa fa-search fa-fw'" [primary]="true" class="searchBtn" [disabled]='!FormSearch.valid'>Search</button>
+
+                        </div>
+                    </div>
+                </form>
+
+                <kendo-grid [data]="gridView" [pageSize]="pageSize" [skip]="skip" [pageable]="false" [height]="500" [selectable]="true">
+                    <kendo-grid-checkbox-column showSelectAll="true"></kendo-grid-checkbox-column>
+                    <kendo-grid-column field="Name" title="Name" [width]="300"></kendo-grid-column>
+                    <kendo-grid-column field="Code" title="Code"></kendo-grid-column>
+                    <kendo-grid-column field="Department" title="Department"></kendo-grid-column>
+                    <kendo-grid-column field="DateOfBirth" title="Date of Birth"></kendo-grid-column>
+                    <kendo-grid-column field="Gender" title="Gender"></kendo-grid-column>
+                </kendo-grid>
+            </ng-template>
+        </kendo-tabstrip-tab>
+
+    </kendo-tabstrip>
+
+
+
+</div>

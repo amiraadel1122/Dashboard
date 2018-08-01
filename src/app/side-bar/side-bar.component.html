@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="row">
+        <div class="wrapper col-lg-3">
+            <!-- Sidebar  -->
+            <nav id="sidebar">
+
+                <a id="sidebarCollapse" class="btn">
+                    <i class="fa fa-align-left"></i>
+                </a>
+                <ul class="list-unstyled components mt-5">
+                    <!-- <li class="active"> -->
+                    <!-- <kendo-menu [items]="items" class="sideStyle mt-5" [vertical]="true" style="display:inline-block;">
+                                <ng-template kendoMenuItemLinkTemplate let-item="item" let-index="index">
+                                    <a [kendoMenuItemLink]="index" [routerLink]="item.path" class="mt-4">
+                                        {{ item.text }}
+                                        <span *ngIf="item.items && item.items.length" [kendoMenuExpandArrow]="index"></span>
+                                    </a>
+                                </ng-template>
+                            </kendo-menu> -->
+
+                    <!-- </li> -->
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-tachometer"></i>Dashboard
+
+                        </a>
+                        <a routerLink="/addEmployee">
+                            <i class="fa fa-user-plus"></i> Add Employee
+                        </a>
+
+                        <a routerLink="/Reports">
+                            <i class="fa fa-copy"></i> Reports
+                        </a>
+
+                    </li>
+                </ul>
+
+            </nav>
+
+
+            <!-- Page Content  -->
+            <div id="content">
+
+                <nav class="navbar">
+                    <div class="container-fluid">
+                        <div *ngIf="router.url === '/'">
+                            <app-home></app-home>
+                        </div>
+
+                        <!-- 
+                            <div *ngIf="router.url === '/addEmployee'">
+                                <app-add-employee></app-add-employee>
+            
+                            </div> -->
+                        <!-- <div *ngIf="router.url === '/searchEmployee'">
+                                <app-search-employee></app-search-employee>
+                            </div> -->
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
