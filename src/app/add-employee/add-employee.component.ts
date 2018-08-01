@@ -95,8 +95,8 @@ export class AddEmployeeComponent implements OnInit {
         Name: a.Name,
         Department: a.Department,
         Code: a.Code,
-        DateOfBirth: a.DateOfBirth.substring(0, 10)},
-        Gender: a.Gender
+        DateOfBirth: a.DateOfBirth.substring(0, 10),
+        Gender: a.Gender},
         ; return obj;
       });
        this.gridView = EditedResult;
