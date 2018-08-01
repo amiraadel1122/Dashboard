@@ -37,46 +37,6 @@ export class AddEmployeeComponent implements OnInit {
 
   AlertShown = false;
 
-// For Grid
-
-// public employeesList = [
-//   {
-//     Name: 'Amira',
-//     Code: 4444,
-//     Department: 'HRD',
-//     DateOfBirth: '1-7-1993',
-//     Gender: 'Female'
-//   },
-//   {
-//     Name: 'Amira',
-//     Code: 4444,
-//     Department: 'HRD',
-//     DateOfBirth: '1-7-1993',
-//     Gender: 'Female'
-//   },
-//   {
-//     Name: 'Amira',
-//     Code: 4444,
-//     Department: 'HRD',
-//     DateOfBirth: '1-7-1993',
-//     Gender: 'Female'
-//   },
-//   {
-//     Name: 'Amira',
-//     Code: 4444,
-//     Department: 'HRD',
-//     DateOfBirth: '1-7-1993',
-//     Gender: 'Female'
-//   },
-//   {
-//     Name: 'Amira',
-//     Code: 4444,
-//     Department: 'HRD',
-//     DateOfBirth: '1-7-1993',
-//     Gender: 'Female'
-//   }
-// ];
-
     public gridView: GridDataResult;
     public items: any[] ;
     public mySelection: number[] = [];
@@ -104,9 +64,6 @@ export class AddEmployeeComponent implements OnInit {
         searchName : [null, Validators.required],
         searchDepartment : [null, Validators.required]
       });
-
-      // this.items = this.employeesList;
-      // this.loadItems();
    }
 
     submitFun(e) {
@@ -136,9 +93,10 @@ export class AddEmployeeComponent implements OnInit {
        console.log(result);
        const EditedResult = result.map( a => { const obj = {
         Name: a.Name,
-        Dapartment: a.Department,
+        Department: a.Department,
         Code: a.Code,
-        DateOfBirth: a.DateOfBirth.substring(0, 10)}
+        DateOfBirth: a.DateOfBirth.substring(0, 10)},
+        Gender: a.Gender
         ; return obj;
       });
        this.gridView = EditedResult;
